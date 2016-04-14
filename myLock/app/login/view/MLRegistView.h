@@ -8,9 +8,13 @@
 
 #import "MLView.h"
 
+typedef void (^phoneCodeBlock)(NSString*phoneCode);
+
 @protocol nextDelegate <NSObject>
 
 -(void)pushViewController:(UIViewController*)vc animated:(BOOL)animated;
+
+-(void)getPhoneCode:(NSString *)phone phoneCode:(phoneCodeBlock)phoneCode;
 @end
 
 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MLRecodeListCell" rowHeight="73" id="KGk-i7-Jjw" customClass="MLRecodeListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="包先生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wO-y2-sNZ">
+                        <rect key="frame" x="75" y="15" width="59" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="reu-cc-6hM"/>
+                            <constraint firstAttribute="width" constant="59" id="t0S-Ro-Ic1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18600135086" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPy-PB-Aj8">
+                        <rect key="frame" x="142" y="15" width="161" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="2ng-Wt-trQ"/>
+                            <constraint firstAttribute="width" constant="161" id="MFM-7I-uj2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/21/13:30打开了我的小电驴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHU-bq-u50">
+                        <rect key="frame" x="75" y="37" width="174" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="D0j-bP-He8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="他的爱锁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skw-ZI-VL4">
+                        <rect key="frame" x="257" y="37" width="55" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="BZh-I3-dDF"/>
+                            <constraint firstAttribute="width" constant="55" id="xv0-t0-tkC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maomi.png" translatesAutoresizingMaskIntoConstraints="NO" id="96D-XY-TAu">
+                        <rect key="frame" x="12" y="11" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="QEh-AA-abG"/>
+                            <constraint firstAttribute="height" constant="50" id="Vjs-d7-PNe"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="eHU-bq-u50" secondAttribute="trailing" constant="71" id="0T9-nT-y9H"/>
+                    <constraint firstItem="CPy-PB-Aj8" firstAttribute="leading" secondItem="1wO-y2-sNZ" secondAttribute="trailing" constant="8" id="A90-RB-XFa"/>
+                    <constraint firstItem="96D-XY-TAu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Jai-nb-cZ5"/>
+                    <constraint firstItem="skw-ZI-VL4" firstAttribute="top" secondItem="CPy-PB-Aj8" secondAttribute="bottom" constant="1" id="L6n-vZ-895"/>
+                    <constraint firstItem="eHU-bq-u50" firstAttribute="leading" secondItem="96D-XY-TAu" secondAttribute="trailing" constant="13" id="Vxj-t4-EYc"/>
+                    <constraint firstItem="1wO-y2-sNZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="i6d-0X-ciq"/>
+                    <constraint firstItem="96D-XY-TAu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="mle-uK-xon"/>
+                    <constraint firstAttribute="trailing" secondItem="skw-ZI-VL4" secondAttribute="trailing" constant="8" id="n3B-gb-Dto"/>
+                    <constraint firstItem="1wO-y2-sNZ" firstAttribute="leading" secondItem="96D-XY-TAu" secondAttribute="trailing" constant="13" id="u4a-sK-ETZ"/>
+                    <constraint firstItem="eHU-bq-u50" firstAttribute="top" secondItem="CPy-PB-Aj8" secondAttribute="bottom" constant="1" id="vii-Hk-Zll"/>
+                    <constraint firstItem="CPy-PB-Aj8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="z0Q-wr-wCA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="icon" destination="96D-XY-TAu" id="1xV-yW-ykC"/>
+                <outlet property="lockName" destination="skw-ZI-VL4" id="RlJ-9o-Yv1"/>
+                <outlet property="name" destination="1wO-y2-sNZ" id="xPf-9h-4vX"/>
+                <outlet property="phone" destination="CPy-PB-Aj8" id="wPb-TQ-g17"/>
+                <outlet property="timeEvent" destination="eHU-bq-u50" id="csj-DF-CIC"/>
+            </connections>
+            <point key="canvasLocation" x="182" y="189.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="maomi.png" width="77" height="77"/>
+    </resources>
+</document>

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^result)(id resultString);
+
 @interface MLLoginModel : NSObject
+
++(void)loginDataObj:(NSDictionary *)dataDic registResult:(result)registResult;
 
 @end

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MLMineViewCell" rowHeight="50" id="1FN-p5-SbS" customClass="MLMineViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1FN-p5-SbS" id="AnL-bI-Ojj">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share.png" translatesAutoresizingMaskIntoConstraints="NO" id="W9u-sY-D7c">
+                        <rect key="frame" x="18" y="15" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="YBr-aT-YFH"/>
+                            <constraint firstAttribute="width" constant="20" id="kV8-UM-jMg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享权限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydu-hf-Exl">
+                        <rect key="frame" x="50" y="9" width="241" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="BhP-MR-yxi"/>
+                            <constraint firstAttribute="width" constant="241" id="auZ-xP-xdi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="W9u-sY-D7c" firstAttribute="top" secondItem="AnL-bI-Ojj" secondAttribute="top" constant="15" id="M8R-wS-8Fq"/>
+                    <constraint firstItem="Ydu-hf-Exl" firstAttribute="leading" secondItem="W9u-sY-D7c" secondAttribute="trailing" constant="12" id="ZqE-ov-GZ9"/>
+                    <constraint firstItem="W9u-sY-D7c" firstAttribute="leading" secondItem="AnL-bI-Ojj" secondAttribute="leading" constant="18" id="fMl-K4-7iz"/>
+                    <constraint firstItem="Ydu-hf-Exl" firstAttribute="top" secondItem="AnL-bI-Ojj" secondAttribute="top" constant="9" id="iJu-kL-BIV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="icon" destination="W9u-sY-D7c" id="jlm-0G-lcQ"/>
+                <outlet property="titleStr" destination="Ydu-hf-Exl" id="Zcz-50-yxC"/>
+            </connections>
+            <point key="canvasLocation" x="257" y="312"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="share.png" width="19" height="19"/>
+    </resources>
+</document>

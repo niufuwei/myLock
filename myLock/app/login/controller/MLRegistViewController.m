@@ -8,6 +8,7 @@
 
 #import "MLRegistViewController.h"
 #import "MLRegistView.h"
+#import "MLPhoneCodeModel.h"
 
 @interface MLRegistViewController ()<nextDelegate>
 
@@ -30,6 +31,13 @@
 -(void)pushViewController:(UIViewController *)vc animated:(BOOL)animated
 {
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)getPhoneCode:(NSString *)phone phoneCode:(phoneCodeBlock)phoneCode
+{
+    [MLPhoneCodeModel getPhoneCode:phone phoneCode:^(id resultString) {
+        NSLog(@"%@",resultString);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -22,7 +22,6 @@
 
 @property (nonatomic,strong) MLLockModel * lockModel;
 @property (nonatomic,strong) MLLockView * lockView;
-@property (nonatomic,strong) MLDataModel * dataModel;
 @end
 
 @implementation MLLockViewController
@@ -43,33 +42,7 @@
     self.delegate = self.lockView;
     [self.view addSubview:self.lockView];
     
-    
-    lockModel = [[MLLockModel alloc] init];
-    lockModel.dataArray = [[NSMutableArray alloc] init];
-        
-    self.dataModel = [[MLDataModel alloc] init];
-    self.dataModel.type = @"1";
-    self.dataModel.uid = @"0";
-    self.dataModel.token = @"0";
-    self.dataModel.User.userID = @"0";
-    self.dataModel.User.account = @"18600135086";
-    self.dataModel.User.password = @"123456";
-    self.dataModel.User.nickName = @"laoniu";
-    self.dataModel.User.isOnline = @"1";
-    self.dataModel.User.img = @"0";
-    self.dataModel.User.personality = @"我固自我在";
-    self.dataModel.User.accountMacAddr = @"0";
-    self.dataModel.User.accountImei = @"0";
-    self.dataModel.User.ip = @"192.168.0.1";
-    self.dataModel.User.port = @"7777";
-    self.dataModel.User.zGroup = @"0";
-    self.dataModel.User.logTime = @"0";
-    self.dataModel.User.regTime = @"0";
-    self.dataModel.User.prop = @"0";
-    self.dataModel.User.res = @"0";
-    self.dataModel.pktNumber = @"0";
-    
-    [MLDataManager registDataManager:self.dataModel];
+   
     // Do any additional setup after loading the view.
 }
 

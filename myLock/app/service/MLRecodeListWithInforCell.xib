@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MLRecodeListCell" rowHeight="92" id="KGk-i7-Jjw" customClass="MLRecodeListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18600135086" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPy-PB-Aj8">
+                        <rect key="frame" x="149" y="15" width="161" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="gZ2-lB-ibR"/>
+                            <constraint firstAttribute="width" constant="161" id="n1o-ib-DKQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/21/13:30打开了我的小电驴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHU-bq-u50">
+                        <rect key="frame" x="82" y="37" width="174" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="2Yd-SR-roe"/>
+                            <constraint firstAttribute="width" constant="174" id="hB4-WX-GVM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="他的爱锁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skw-ZI-VL4">
+                        <rect key="frame" x="264" y="37" width="55" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="AYy-KL-s8M"/>
+                            <constraint firstAttribute="height" constant="21" id="Nc6-5S-wFV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maomi.png" translatesAutoresizingMaskIntoConstraints="NO" id="96D-XY-TAu">
+                        <rect key="frame" x="10" y="15" width="63" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="xQR-TU-10x"/>
+                            <constraint firstAttribute="width" constant="63" id="zc1-Tk-sG6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="杭州市西湖区文二西路与古屯路交叉口" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jo-Rn-U7i">
+                        <rect key="frame" x="99" y="58" width="204" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="LyZ-eT-zDe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locaction.png" translatesAutoresizingMaskIntoConstraints="NO" id="NT3-P5-1FD">
+                        <rect key="frame" x="82" y="61" width="12" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="8bs-Fm-owU"/>
+                            <constraint firstAttribute="height" constant="14" id="zyH-wm-CYv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="包先生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wO-y2-sNZ">
+                        <rect key="frame" x="82" y="15" width="59" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="59" id="Se3-45-EFK"/>
+                            <constraint firstAttribute="height" constant="21" id="s0g-GA-XgA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2Jo-Rn-U7i" secondAttribute="trailing" constant="17" id="1U5-oL-78x"/>
+                    <constraint firstItem="CPy-PB-Aj8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="40D-x9-iQL"/>
+                    <constraint firstItem="96D-XY-TAu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BQz-mG-uzD"/>
+                    <constraint firstItem="skw-ZI-VL4" firstAttribute="leading" secondItem="eHU-bq-u50" secondAttribute="trailing" constant="8" id="DaL-CO-5a6"/>
+                    <constraint firstItem="CPy-PB-Aj8" firstAttribute="leading" secondItem="1wO-y2-sNZ" secondAttribute="trailing" constant="8" id="Hln-TM-frg"/>
+                    <constraint firstItem="eHU-bq-u50" firstAttribute="leading" secondItem="96D-XY-TAu" secondAttribute="trailing" constant="9" id="Mv5-dx-YdK"/>
+                    <constraint firstItem="NT3-P5-1FD" firstAttribute="top" secondItem="eHU-bq-u50" secondAttribute="bottom" constant="3" id="Rpl-U3-b59"/>
+                    <constraint firstItem="skw-ZI-VL4" firstAttribute="top" secondItem="CPy-PB-Aj8" secondAttribute="bottom" constant="1" id="XIa-31-PNe"/>
+                    <constraint firstItem="2Jo-Rn-U7i" firstAttribute="top" secondItem="skw-ZI-VL4" secondAttribute="bottom" id="YBI-VC-jS4"/>
+                    <constraint firstItem="96D-XY-TAu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="c3J-To-Gcs"/>
+                    <constraint firstItem="1wO-y2-sNZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="e3P-zZ-d1M"/>
+                    <constraint firstItem="eHU-bq-u50" firstAttribute="top" secondItem="CPy-PB-Aj8" secondAttribute="bottom" constant="1" id="hgw-zA-wqr"/>
+                    <constraint firstItem="NT3-P5-1FD" firstAttribute="leading" secondItem="96D-XY-TAu" secondAttribute="trailing" constant="9" id="kkP-iQ-Ccq"/>
+                    <constraint firstItem="2Jo-Rn-U7i" firstAttribute="leading" secondItem="NT3-P5-1FD" secondAttribute="trailing" constant="5" id="qNS-sc-ArC"/>
+                    <constraint firstItem="1wO-y2-sNZ" firstAttribute="leading" secondItem="96D-XY-TAu" secondAttribute="trailing" constant="9" id="qm9-XV-jdy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="icon" destination="96D-XY-TAu" id="1xV-yW-ykC"/>
+                <outlet property="lockName" destination="skw-ZI-VL4" id="RlJ-9o-Yv1"/>
+                <outlet property="name" destination="1wO-y2-sNZ" id="xPf-9h-4vX"/>
+                <outlet property="phone" destination="CPy-PB-Aj8" id="wPb-TQ-g17"/>
+                <outlet property="timeEvent" destination="eHU-bq-u50" id="csj-DF-CIC"/>
+            </connections>
+            <point key="canvasLocation" x="182" y="199"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="locaction.png" width="12" height="16"/>
+        <image name="maomi.png" width="77" height="77"/>
+    </resources>
+</document>

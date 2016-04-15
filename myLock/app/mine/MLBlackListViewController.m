@@ -27,6 +27,15 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)pushViewController:(UIViewController *)vc animated:(BOOL)animated
+{
+    
+}
+
+-(void)eventClick
+{
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -33,10 +33,30 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)getPhoneCode:(NSString *)phone phoneCode:(phoneCodeBlock)phoneCode
+-(void)getPhoneCode:(MLPhoneCodeModel *)model phoneCode:(phoneCodeBlock)phoneCode
 {
-    [MLPhoneCodeModel getPhoneCode:phone phoneCode:^(id resultString) {
+    [MLDataManager getPhoneCodeManager:model resultString:^(id resultString) {
         NSLog(@"%@",resultString);
+        NSDictionary * dataDic = [MLMethod dataManager:resultString];
+        if([dataDic allKeys]==0)
+        {
+            [MLMethod alertMessage:@"请求数据发生错误！"];
+            
+        }
+        else
+        {
+            if([[[dataDic objectForKey:@"obj"] objectForKey:@"code"] intValue] == 1 && [[dataDic objectForKey:@"type"] intValue] == 5)
+            {
+                phoneCode(resultString);
+            }
+            else if([[dataDic objectForKey:@"type"] intValue] != 5) {
+                
+            }
+            else {
+                [MLMethod alertMessage:[[dataDic objectForKey:@"obj"] objectForKey:@"msg"]];
+            }
+        }
+
     }];
 }
 

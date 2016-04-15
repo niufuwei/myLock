@@ -39,6 +39,13 @@
     }];
 }
 
+-(void)login:(MLLoginModel *)model
+{
+    [MLDataManager loginManager:model resultString:^(id resultString) {
+        NSLog(@"%@",resultString);
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

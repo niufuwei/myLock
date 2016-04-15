@@ -137,9 +137,9 @@
     [sock readDataWithTimeout:60 tag:0];
     
     // 每隔30s像服务器发送心跳包
-    self.connectTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(longConnectToSocket) userInfo:nil repeats:YES];// 在longConnectToSocket方法中进行长连接需要向服务器发送的讯息
+//    self.connectTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(longConnectToSocket) userInfo:nil repeats:YES];// 在longConnectToSocket方法中进行长连接需要向服务器发送的讯息
     
-    [self.connectTimer fire];
+//    [self.connectTimer fire];
 }
 
 //读取数据

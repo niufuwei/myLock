@@ -13,6 +13,7 @@
 #import "MLForgetPasswordViewController.h"
 #import "MLTabbarViewController.h"
 #import "AppDelegate.h"
+#import "MLLoginModel.h"
 
 @interface MLLoginView ()<UIScrollViewDelegate>
 
@@ -113,8 +114,14 @@
         case 103:
         {
             //登录
-            [_delegate dismissViewControllerAnimated];
-            
+            if([self checkData])
+            {
+                MLLoginModel * model = [[MLLoginModel alloc] init];
+                model.phone = _textFieldPhone.textfield.text;
+                model.password = _textFieldNewPassword.textfield.text;
+                [_delegate login:model];
+            }
+        
         }
             break;
             
@@ -122,5 +129,21 @@
             break;
     }
 }
+
+-(BOOL)checkData
+{
+    if([MLMethod isEmpty:_textFieldPhone.textfield.text])
+    {
+        [MLMethod alertMessage:@"请输入用户名"];
+        return NO;
+    }
+    if([MLMethod isEmpty:_textFieldNewPassword.textfield.text])
+    {
+        [MLMethod alertMessage:@"请输入您的密码"];
+        return NO;
+    }
+    return YES;
+}
+
 
 @end

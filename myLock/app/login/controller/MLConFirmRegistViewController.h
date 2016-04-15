@@ -14,5 +14,9 @@
 @end
 @interface MLConFirmRegistViewController : MLViewController
 
+@property (nonatomic,strong) NSString * phone;
+@property (nonatomic,strong) NSString * password;
+@property (nonatomic,strong) NSString * code;
+
 @property (nonatomic,weak) id<confirmEventDelegate>delegate;
 @end

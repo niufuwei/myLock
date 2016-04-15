@@ -9,6 +9,7 @@
 #import "MLConFirmRegistViewController.h"
 #import "MLConFirmRegist.h"
 #import "MLPhoto.h"
+#import "MLRegistModel.h"
 
 @interface MLConFirmRegistViewController ()<conFirmDelegate>
 @property (nonatomic,strong) MLConFirmRegist * regist;
@@ -24,6 +25,11 @@
     
     self.regist = [[MLConFirmRegist alloc] initWithFrame:self.view.frame myself:self];
     self.delegate = self.regist;
+    MLRegistModel * registModel = [[MLRegistModel alloc] init];
+    registModel.phone = self.phone;
+    registModel.password = self.password;
+    registModel.code = self.code;
+    self.regist.registModel = registModel;
     [self.view addSubview:self.regist];
     // Do any additional setup after loading the view.
 }
@@ -37,6 +43,15 @@
             [_delegate updateUI:image];
         }];
     }
+}
+
+-(void)regist:(MLRegistModel *)model
+{
+    
+    [MLDataManager registDataManager:model resultString:^(id resultString) {
+        NSLog(@"%@",resultString);
+
+    }];
 }
 
 -(void)dismissViewControllerAnimated

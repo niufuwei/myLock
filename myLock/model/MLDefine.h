@@ -10,6 +10,6 @@
 #define MLDefine_h
 
 #define NET_WORK_CONNECT_ADDR_IP @"121.40.92.142"
-#define PORT                     @"7777"
+#define PORT                     7777
 
 #endif /* MLDefine_h */

@@ -975,14 +975,14 @@
 		1D8696371CB547D200C48FEA /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				1D8696381CB547D200C48FEA /* MLConFirmRegistViewController.h */,
-				1D8696391CB547D200C48FEA /* MLConFirmRegistViewController.m */,
 				1D86963A1CB547D200C48FEA /* MLForgetPasswordViewController.h */,
 				1D86963B1CB547D200C48FEA /* MLForgetPasswordViewController.m */,
 				1D86963C1CB547D200C48FEA /* MLLoginViewController.h */,
 				1D86963D1CB547D200C48FEA /* MLLoginViewController.m */,
 				1D86963E1CB547D200C48FEA /* MLRegistViewController.h */,
 				1D86963F1CB547D200C48FEA /* MLRegistViewController.m */,
+				1D8696381CB547D200C48FEA /* MLConFirmRegistViewController.h */,
+				1D8696391CB547D200C48FEA /* MLConFirmRegistViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1018,14 +1018,14 @@
 		1D86964A1CB547D200C48FEA /* view */ = {
 			isa = PBXGroup;
 			children = (
-				1D86964B1CB547D200C48FEA /* MLConFirmRegist.h */,
-				1D86964C1CB547D200C48FEA /* MLConFirmRegist.m */,
 				1D86964D1CB547D200C48FEA /* MLForgetView.h */,
 				1D86964E1CB547D200C48FEA /* MLForgetView.m */,
 				1D86964F1CB547D200C48FEA /* MLLoginView.h */,
 				1D8696501CB547D200C48FEA /* MLLoginView.m */,
 				1D8696511CB547D200C48FEA /* MLRegistView.h */,
 				1D8696521CB547D200C48FEA /* MLRegistView.m */,
+				1D86964B1CB547D200C48FEA /* MLConFirmRegist.h */,
+				1D86964C1CB547D200C48FEA /* MLConFirmRegist.m */,
 			);
 			path = view;
 			sourceTree = "<group>";

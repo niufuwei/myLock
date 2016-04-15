@@ -18,6 +18,7 @@
 @property (nonatomic,strong) UIScrollView * scrollview;
 @property (nonatomic,strong) UIButton * buttonConfrim ;
 @property (nonatomic,strong) UIButton * photoButton ;
+@property (nonatomic,assign) __block NSInteger sexInt;
 
 @end
 
@@ -58,6 +59,9 @@
         
         self.selectorView = [[MLSelectorView alloc] initWithFrame:CGRectMake(0, self.userName.frame.size.height+self.userName.frame.origin.y +10, kScreen_Width, 50) title:@"" lineFromX:20 lineColor:WHITECOLOR textColor:WHITECOLOR backBlock:^(id btn) {
             
+            UIButton * b = (UIButton*)btn;
+            self.sexInt = b.tag;
+            
         }];
         [self.scrollview addSubview:self.selectorView];
         
@@ -91,9 +95,35 @@
     }
     else
     {
-        [_delegate dismissViewControllerAnimated];
-
+        if([self checkData])
+        {
+            _registModel.imageUrl = @"";
+            _registModel.userName = _userName.textfield.text;
+            _registModel.sex = self.sexInt;
+            _registModel.address = _address.textfield.text;
+            [_delegate regist:_registModel];
+        }
     }
+}
+
+-(BOOL)checkData
+{
+    if([MLMethod isEmpty:_userName.textfield.text])
+    {
+        [MLMethod alertMessage:@"请输入用户名"];
+        return NO;
+    }
+    if(self.sexInt ==0)
+    {
+        [MLMethod alertMessage:@"请选择性别"];
+        return NO;
+    }
+    if([MLMethod isEmpty:_address.textfield.text])
+    {
+        [MLMethod alertMessage:@"请输入您的地址"];
+        return NO;
+    }
+    return YES;
 }
 
 -(void)updateUI:(UIImage *)image

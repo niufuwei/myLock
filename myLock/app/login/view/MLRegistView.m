@@ -10,6 +10,7 @@
 #import "MLTextFieldView.h"
 #import "MLCodeView.h"
 #import "MLConFirmRegistViewController.h"
+#import "MLPhoneCodeModel.h"
 
 @interface MLRegistView ()<UIScrollViewDelegate>
 @property (nonatomic,strong) MLTextFieldView * textFieldNewPassword;
@@ -57,8 +58,12 @@
             }
             else
             {
-                [_delegate getPhoneCode:_textFieldPhone.textfield.text phoneCode:^(NSString *phoneCode) {
+                MLPhoneCodeModel * codeModel = [[MLPhoneCodeModel alloc] init];
+                codeModel.phone = _textFieldPhone.textfield.text;
+                [_delegate getPhoneCode:codeModel phoneCode:^(NSString *phoneCode) {
+                    NSLog(@"%@",phoneCode);
                     
+
                 }];
                 
                 __block int timeout=60; //倒计时时间
@@ -115,9 +120,39 @@
 
 -(void)onClick:(id)sender
 {
-    MLConFirmRegistViewController * regist = [[MLConFirmRegistViewController alloc] init];
-    [_delegate pushViewController:regist animated:YES];
+    if([self checkData])
+    {
+        MLConFirmRegistViewController * regist = [[MLConFirmRegistViewController alloc] init];
+        regist.phone = self.textFieldPhone.textfield.text;
+        regist.password = self.textFieldNewPassword.textfield.text;
+        regist.code = self.codeView.textfield.text;
+        [_delegate pushViewController:regist animated:YES];
+
+    }
+    
 }
+
+-(BOOL)checkData
+{
+    if(![MLMethod checkTel:self.textFieldPhone.textfield.text])
+    {
+        [MLMethod alertMessage:@"请输入正确的手机号"];
+        return NO;
+    }
+    if([self.textFieldNewPassword.textfield.text length] < 6)
+    {
+        [MLMethod alertMessage:@"请输入6位以上密码"];
+        return NO;
+    }
+    if([self.codeView.textfield.text length] != 4)
+    {
+        [MLMethod alertMessage:@"请输入正确的验证码"];
+        return NO;
+    }
+
+    return YES;
+}
+
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
     [self endEditing:YES];

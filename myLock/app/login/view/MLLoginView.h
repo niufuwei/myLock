@@ -8,10 +8,14 @@
 
 #import "MLView.h"
 
+
+@class MLLoginModel;
 @protocol loginDelegate <NSObject>
+
 
 -(void)pushViewController:(UIViewController*)vc animated:(BOOL)animated;
 -(void)dismissViewControllerAnimated;
+-(void)login:(MLLoginModel*)model;
 @end
 
 @interface MLLoginView : MLView

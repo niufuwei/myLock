@@ -12,8 +12,6 @@ typedef void (^result)(id resultString);
 
 @interface MLPhoneCodeModel : NSObject
 
-@property (nonatomic,strong) NSString * account;
-
-+(void)getPhoneCode:(NSString * )phone phoneCode:(result)phoneCode;
+@property (nonatomic,strong) NSString * phone;
 
 @end

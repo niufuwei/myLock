@@ -174,4 +174,71 @@ static UIView * temp_passwordView = nil;
     }
 }
 
++(id)dataManager:(id)data
+{
+    if([[data substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"AA"] && [[data substringWithRange:NSMakeRange([data length] - 4, 4)] isEqualToString:@"00BB"])
+    {
+        NSString * temp_data = [data substringWithRange:NSMakeRange(2, [data length]-6)];
+      
+        NSLog(@"%@",temp_data);
+        NSLog(@"%@",[self dictionaryWithJsonString:temp_data]);
+       
+        return [self dictionaryWithJsonString:temp_data];
+    }
+    return @{};
+}
+
+/*!
+ * @brief 把格式化的JSON格式的字符串转换成字典
+ * @param jsonString JSON格式的字符串
+ * @return 返回字典
+ */
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
++(BOOL)checkTel:(NSString *)str
+{
+    if ([str length] == 0) {
+        return NO;
+    }
+    //1[0-9]{10}
+    //^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$
+    //    NSString *regex = @"[0-9]{11}";
+    NSString *regex = @"^((13[0-9])|(147)|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    BOOL isMatch = [pred evaluateWithObject:str];
+    if (!isMatch) {
+        return NO;
+    }
+    
+    return YES;
+}
+
++(NSString *)stringManager:(id)obj
+{
+    if([MLMethod isEmpty:obj])
+    {
+        return @"";
+    }
+    else if([obj isKindOfClass:[NSNumber class]])
+    {
+        return [NSString stringWithFormat:@"%@",obj];
+    }
+    return obj;
+}
+
 @end

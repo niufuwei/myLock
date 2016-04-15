@@ -38,4 +38,9 @@ typedef void (^block)(NSInteger index);
 +(void)alertMessage:(NSString*)string;
 
 +(BOOL)isEmpty:(id)obj;
+
++(id)dataManager:(id)data;
+
++(BOOL)checkTel:(NSString *)str;
++(NSString *)stringManager:(id)obj;
 @end

@@ -371,7 +371,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self hidden];
-    NSLog(@"%d",old_tag);
+    NSLog(@"%ld",(long)old_tag);
 
     [_delegate confirmButtonClick:old_tag selectStr:[_dataArray objectAtIndex:indexPath.row]];
 }

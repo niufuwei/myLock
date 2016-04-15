@@ -12,5 +12,12 @@ typedef void (^result)(id resultString);
 
 @interface MLRegistModel : NSObject
 
-+(void)registDataObj:(NSDictionary *)dataDic registResult:(result)registResult;
+@property (nonatomic,strong) NSString * phone;
+@property (nonatomic,strong) NSString * password;
+@property (nonatomic,strong) NSString * code;
+@property (nonatomic,strong) NSString * userName;
+@property (nonatomic,strong) NSString * imageUrl;
+@property (nonatomic,assign) NSInteger sex;
+@property (nonatomic,strong) NSString * address;
+
 @end

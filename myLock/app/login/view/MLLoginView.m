@@ -48,6 +48,7 @@
     
         self.textFieldNewPassword = [[MLTextFieldView alloc] initWithFrame:CGRectMake(0, self.textFieldPhone.frame.size.height+self.textFieldPhone.frame.origin.y +10, kScreen_Width, 50) title:@"密码" lineFromX:20 lineColor:WHITECOLOR textColor:WHITECOLOR backBlock:^(NSString* textfield) {
         }];
+        self.textFieldNewPassword.textfield.secureTextEntry = YES;
         [self.scrollview addSubview:self.textFieldNewPassword];
 
         self.registButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -118,7 +119,7 @@
             {
                 MLLoginModel * model = [[MLLoginModel alloc] init];
                 model.phone = _textFieldPhone.textfield.text;
-                model.password = _textFieldNewPassword.textfield.text;
+                model.password = [MLMethod md5HexDigest:_textFieldNewPassword.textfield.text];
                 [_delegate login:model];
             }
         

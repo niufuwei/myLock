@@ -12,7 +12,7 @@
 
 +(instancetype)shareInstance
 {
-    static MLDataModel * dataModel;
+    static MLDataModel * dataModel  = nil;
     
     @synchronized (self) {
         if(!dataModel)

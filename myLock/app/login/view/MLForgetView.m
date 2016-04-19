@@ -9,7 +9,8 @@
 #import "MLForgetView.h"
 #import "MLTextFieldView.h"
 #import "MLCodeView.h"
-
+#import "MLPhoneCodeModel.h"
+#import "MLForgetModel.h"
 
 @interface MLForgetView ()<UIScrollViewDelegate>
 
@@ -48,9 +49,26 @@
         
         
         self.codeView = [[MLCodeView alloc] initWithFrame:CGRectMake(0, self.textFieldPhone.frame.size.height+self.textFieldPhone.frame.origin.y+10, kScreen_Width, 50) title:@"验证码" lineFromX:20 lineColor:WHITECOLOR textColor:WHITECOLOR backgroundColor:COLORA(255, 255, 255, 0.4) backBlock:^(id btn) {
+            
+            UIButton * button = (UIButton*)btn;
+            if([MLMethod isEmpty:_textFieldPhone.textfield.text])
+            {
+                [MLMethod alertMessage:@"请输入手机号"];
+                
+            }
+            else
+            {
+                MLPhoneCodeModel * codeModel = [[MLPhoneCodeModel alloc] init];
+                codeModel.phone = _textFieldPhone.textfield.text;
+                [_delegate getPhoneCode:codeModel phoneCode:^(NSString *phoneCode) {
+                    NSLog(@"%@",phoneCode);
+                    
+                    
+                }];
+            }
+            
             //获取验证码
             self.codeView.backgroundColor = CLEARCOLOR;
-            UIButton * button = (UIButton*)btn;
             
             __block int timeout=60; //倒计时时间
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -85,6 +103,7 @@
         
         self.textFieldNewPassword = [[MLTextFieldView alloc] initWithFrame:CGRectMake(0, self.codeView.frame.size.height+self.codeView.frame.origin.y +10, kScreen_Width, 50) title:@"新密码" lineFromX:20 lineColor:WHITECOLOR textColor:WHITECOLOR backBlock:^(NSString* textfield) {
         }];
+        self.textFieldNewPassword.textfield.secureTextEntry = YES;
         [self.scrollview addSubview:self.textFieldNewPassword];
         
         
@@ -104,7 +123,38 @@
 
 -(void)onClick:(id)sender
 {
-    [_delegate dismissViewControllerAnimated];
+    if([self checkData])
+    {
+        MLForgetModel * model = [[MLForgetModel alloc] init];
+        model.phone = self.textFieldPhone.textfield.text;
+        model.password = [MLMethod md5HexDigest:self.textFieldNewPassword .textfield.text];
+        model.code = self.codeView.textfield.text;
+        [_delegate confirmFindPassword:model];
+ 
+    }
+}
+
+-(BOOL)checkData
+{
+    if(![MLMethod checkTel:self.textFieldPhone.textfield.text])
+    {
+        [MLMethod alertMessage:@"请输入正确的手机号"];
+        return NO;
+    }
+    if([self.textFieldNewPassword .textfield.text length] <6)
+    {
+        [MLMethod alertMessage:@"为保证您的密码安全，请输入六位以上密码"];
+        return NO;
+
+    }
+    if([self.codeView.textfield.text length] !=4)
+    {
+        [MLMethod alertMessage:@"请输入正确的验证码"];
+        return NO;
+
+    }
+    return YES;
+ 
 }
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {

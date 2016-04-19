@@ -45,16 +45,7 @@
         }
         else
         {
-            if([[[dataDic objectForKey:@"obj"] objectForKey:@"code"] intValue] == 1 && [[dataDic objectForKey:@"type"] intValue] == 5)
-            {
-                phoneCode(resultString);
-            }
-            else if([[dataDic objectForKey:@"type"] intValue] != 5) {
-                
-            }
-            else {
-                [MLMethod alertMessage:[[dataDic objectForKey:@"obj"] objectForKey:@"msg"]];
-            }
+            [MLMethod alertMessage:[[dataDic objectForKey:@"obj"] objectForKey:@"msg"]];
         }
 
     }];

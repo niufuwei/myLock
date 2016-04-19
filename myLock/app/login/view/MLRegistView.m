@@ -45,6 +45,7 @@
         
         self.textFieldPhone = [[MLTextFieldView alloc] initWithFrame:CGRectMake(0, 40, kScreen_Width, 50) title:@"手机号" lineFromX:20 lineColor:WHITECOLOR textColor:WHITECOLOR backBlock:^(NSString* textfield) {
         }];
+        self.textFieldPhone.textfield.keyboardType = UIKeyboardTypePhonePad;
         [self.scrollview addSubview:self.textFieldPhone];
         
         
@@ -101,6 +102,7 @@
         
         self.textFieldNewPassword = [[MLTextFieldView alloc] initWithFrame:CGRectMake(0, self.codeView.frame.size.height+self.codeView.frame.origin.y +10, kScreen_Width, 50) title:@"输入密码" lineFromX:20 lineColor:WHITECOLOR textColor:WHITECOLOR backBlock:^(NSString* textfield) {
         }];
+        self.textFieldNewPassword.textfield.secureTextEntry = YES;
         [self.scrollview addSubview:self.textFieldNewPassword];
         
         
@@ -124,7 +126,7 @@
     {
         MLConFirmRegistViewController * regist = [[MLConFirmRegistViewController alloc] init];
         regist.phone = self.textFieldPhone.textfield.text;
-        regist.password = self.textFieldNewPassword.textfield.text;
+        regist.password = [MLMethod md5HexDigest:self.textFieldNewPassword.textfield.text];
         regist.code = self.codeView.textfield.text;
         [_delegate pushViewController:regist animated:YES];
 

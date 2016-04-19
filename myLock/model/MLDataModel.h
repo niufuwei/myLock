@@ -6,7 +6,7 @@
 //  Copyright © 2016年 laoniu. All rights reserved.
 //
 #import <Foundation/Foundation.h>
-#import "MLUserModerl.h"
+#import "MLUserModel.h"
 
 @interface MLDataModel : NSObject
 

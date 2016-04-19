@@ -9,6 +9,8 @@
 #import "MLMethod.h"
 #import "MLDataObj.h"
 #import "MLPasswordView.h"
+#import <CommonCrypto/CommonDigest.h>
+#import "SFHFKeychainUtils.h"
 
 @interface MLMethod ()
 
@@ -161,10 +163,16 @@ static UIView * temp_passwordView = nil;
     {
         if([obj length] ==0)
         {
+            
             return YES;
         }
         return NO;
-    }else
+    }
+    else if([obj isKindOfClass:[NSNumber class]])
+    {
+        return NO;
+    }
+    else
     {
         if(obj ==nil || [obj isKindOfClass:[NSNull class]] || [obj rangeOfString:@"null"].location != NSNotFound)
         {
@@ -176,13 +184,11 @@ static UIView * temp_passwordView = nil;
 
 +(id)dataManager:(id)data
 {
+    NSLog(@"%@",data);
     if([[data substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"AA"] && [[data substringWithRange:NSMakeRange([data length] - 4, 4)] isEqualToString:@"00BB"])
     {
         NSString * temp_data = [data substringWithRange:NSMakeRange(2, [data length]-6)];
-      
-        NSLog(@"%@",temp_data);
-        NSLog(@"%@",[self dictionaryWithJsonString:temp_data]);
-       
+        
         return [self dictionaryWithJsonString:temp_data];
     }
     return @{};
@@ -234,11 +240,43 @@ static UIView * temp_passwordView = nil;
     {
         return @"";
     }
-    else if([obj isKindOfClass:[NSNumber class]])
-    {
-        return [NSString stringWithFormat:@"%@",obj];
-    }
     return obj;
+}
+
++ (NSString *)md5HexDigest:(NSString*)input
+{
+    const char* str = [input UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(str, (unsigned int)strlen(str), result);
+    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH*2];//
+    
+    for(int i = 0; i<CC_MD5_DIGEST_LENGTH; i++) {
+        [ret appendFormat:@"%02x",result[i]];
+    }
+    return ret;
+}
+
++(NSString *)getUUID
+{
+
+    NSError * err;
+    if([MLMethod isEmpty:[SFHFKeychainUtils getPasswordForUsername:@"UDID" andServiceName:@"ZYB" error:&err]])
+    {
+        [self setUUID];
+    }
+    return [SFHFKeychainUtils getPasswordForUsername:@"UDID" andServiceName:@"ZYB" error:nil];
+}
+
++(void)setUUID
+{
+    [SFHFKeychainUtils storeUsername:@"UDID" andPassword:[self uuid] forServiceName:@"ZYB" updateExisting:1 error:nil];
+
+}
+
++(NSString*)uuid {
+    CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
+    NSString *cfuuidString = (NSString*)CFBridgingRelease(CFUUIDCreateString(kCFAllocatorDefault, uuid));
+    return cfuuidString;
 }
 
 @end

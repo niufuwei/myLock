@@ -10,13 +10,17 @@
 
 @implementation MLDataObj
 
+static MLDataObj * DataObj = nil;
+
 +(instancetype)initDataObj
 {
-    static MLDataObj * DataObj = nil;
-    dispatch_once_t t;
-    dispatch_once(&t, ^{
-        DataObj = [[self alloc] init];
-    });
+    @synchronized (self) {
+        if(!DataObj)
+        {
+            DataObj = [[self alloc] init];
+
+        }
+    }
     return DataObj;
     
 }

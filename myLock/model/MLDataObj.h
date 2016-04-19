@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString * isShowPasswordView;
 
+@property (nonatomic, assign) BOOL isLogin;
 +(instancetype)initDataObj;
 
 @end

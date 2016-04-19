@@ -41,8 +41,43 @@
 
 -(void)login:(MLLoginModel *)model
 {
+    [ApplicationDelegate showHub:self.view];
+
     [MLDataManager loginManager:model resultString:^(id resultString) {
+        [ApplicationDelegate removeHub];
+        
         NSLog(@"%@",resultString);
+        NSDictionary * dataDic = [MLMethod dataManager:resultString];
+        if([dataDic allKeys]==0)
+        {
+            [MLMethod alertMessage:@"请求数据发生错误！"];
+            [MLDataObj initDataObj].isLogin = FALSE;
+            
+        }
+        else
+        {
+            if([[[dataDic objectForKey:@"obj"] objectForKey:@"code"] intValue] == 1 && [[dataDic objectForKey:@"type"] intValue] == 3)
+            {
+                [[NSUserDefaults standardUserDefaults] setObject:[[[dataDic objectForKey:@"obj"] objectForKey:@"obj"] objectForKey:@"newToken"] forKey:@"token"];
+                
+                [MLUserModel shareInstance].userID = [[[[dataDic objectForKey:@"obj"]objectForKey:@"obj"] objectForKey:@"userID"] integerValue];
+                [MLUserModel shareInstance].account =[[[dataDic objectForKey:@"obj"]objectForKey:@"obj"] objectForKey:@"account"];
+                
+                [MLDataObj initDataObj].isLogin = TRUE;
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            else if([[dataDic objectForKey:@"type"] intValue] != 3) {
+                
+            }
+            else {
+                [MLMethod alertMessage:[[dataDic objectForKey:@"obj"] objectForKey:@"msg"]];
+            }
+            [MLDataObj initDataObj].isLogin = FALSE;
+            
+        }
+
+        
     }];
 }
 

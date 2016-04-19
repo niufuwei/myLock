@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MLUserModerl : NSObject
+@interface MLUserModel : NSObject
 
 @property (nonatomic,assign) NSInteger userID;//用户id
 @property (nonatomic,strong) NSString * account;//用户账号
@@ -29,5 +29,6 @@
 @property (nonatomic,strong) NSString * verifyCode;//验证码
 @property (nonatomic,strong) NSString * area;//区域
 
--(void)initData;
++(void)initData;
++(instancetype)shareInstance;
 @end

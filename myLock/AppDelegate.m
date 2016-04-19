@@ -21,6 +21,7 @@
 @interface AppDelegate ()<AsyncSocketDelegate>
 {
     BMKMapManager * _mapManager;
+    BOOL isAutoCat;//标注是自动掉线，还是手动断线
 }
 
 @property (nonatomic, retain) NSTimer        *connectTimer; // 计时器
@@ -60,7 +61,6 @@
         NSLog(@"manager start failed!");
     }
     
-    
     //链接服务器
     [self connectService];
     
@@ -68,6 +68,24 @@
     [MLDataModel initData];
     // Override point for customization after application launch.
     return YES;
+}
+
+-(void)showHub:(UIView*)v
+{
+    //初始化进度条
+    self.Hub = [[AMTumblrHud alloc] initWithFrame:CGRectMake((CGFloat) ((v.frame.size.width - 55) * 0.5),
+                                                             (CGFloat) ((v.frame.size.height - 15) * 0.5), 55, 15)];
+    self.Hub.hudColor = UIColorFromRGB(0xF1F2F3);//[UIColor magentaColor];
+    [v addSubview:self.Hub];
+    [self.Hub showAnimated:YES];
+}
+
+-(void)removeHub
+{
+    if(self.Hub)
+    {
+        [self.Hub removeFromSuperview];
+    }
 }
 
 
@@ -115,12 +133,16 @@
     {
         NSLog(@"%@",err);
     }
-    
     [self.asyncSocket readDataWithTimeout:60 tag:0];
 }
 
 -(void)writeData:(NSDictionary*)data resultS:(result)resultS
 {
+    //链接服务器
+    if(self.asyncSocket.userData ==1)
+    {
+        [self connectService];
+    }
     self.backDataResult = resultS;
     [self.asyncSocket writeData:[[[@"AA" stringByAppendingString:[data JSONString]] stringByAppendingString:@"00BB"] dataUsingEncoding:NSUTF8StringEncoding] withTimeout:60 tag:0];
 
@@ -129,7 +151,8 @@
 //建立链接
 -(void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
-    
+    NSLog(@"%@",@"已重新连接");
+
     //    NSData   *dataStream  = [@8 dataUsingEncoding:NSUTF8StringEncoding];
     
     //    [self.socket writeData:dataStream withTimeout:1 tag:1];
@@ -164,12 +187,17 @@
     if (sock.userData == SocketOfflineByServer) {
             // 服务器掉线，重连
         NSLog(@"%@",@"服务器掉线");
+        isAutoCat = true;
         [self connectService];
+        
     }
     else if (sock.userData == SocketOfflineByUser) {
     
         NSLog(@"%@",@"用户断开");
+        isAutoCat = false;
             // 如果由用户断开，不进行重连
+        [self removeHub];
+
         return;
     }
 
@@ -179,9 +207,20 @@
 //断开连接
 -(void)onSocketDidDisconnect:(AsyncSocket *)sock
 {
-    self.asyncSocket.userData = 1;
-    [self.asyncSocket disconnect];
-    NSLog(@"%@",@"网络已断开");
+//    if(isAutoCat)
+//    {
+//        //断线重连
+//        NSLog(@"%@",@"断线重连");
+//        [self connectService];
+//    }
+//    else
+//    {
+        self.asyncSocket.userData = 1;
+        [self.asyncSocket disconnect];
+        NSLog(@"%@",@"网络已断开");
+        [self removeHub];
+//    }
+    
 }
 
 // 心跳连接

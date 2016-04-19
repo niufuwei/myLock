@@ -8,6 +8,14 @@
 
 #import "MLSelectorView.h"
 
+@interface MLSelectorView ()
+{
+    UIButton * buttonWoMen;
+    UIButton * buttonMan;
+}
+
+@end
+
 @implementation MLSelectorView
 
 /*
@@ -25,10 +33,10 @@
         _backBlock = backBlock;
       
         
-        UIButton * buttonMan = [UIButton buttonWithType:UIButtonTypeCustom];
+        buttonMan = [UIButton buttonWithType:UIButtonTypeCustom];
         buttonMan.frame = CGRectMake(lineFromX, frame.size.height - 20-10, 20 , 20);
         [buttonMan addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
-        [buttonMan setBackgroundImage:IMAGENAMED(@"regist_selected") forState:UIControlStateNormal];
+        [buttonMan setBackgroundImage:IMAGENAMED(@"regist_select") forState:UIControlStateNormal];
         buttonMan.tag = 1;
         [self addSubview:buttonMan];
         
@@ -39,11 +47,11 @@
         labelMan.textAlignment = NSTextAlignmentLeft;
         [self addSubview:labelMan];
         
-        UIButton * buttonWoMen = [UIButton buttonWithType:UIButtonTypeCustom];
+        buttonWoMen = [UIButton buttonWithType:UIButtonTypeCustom];
         buttonWoMen.frame = CGRectMake(labelMan.frame.size.width + labelMan.frame.origin.x+20, frame.size.height - 20-10, 20 , 20);
         [buttonWoMen addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         buttonWoMen.tag = 2;
-        [buttonWoMen setBackgroundImage:IMAGENAMED(@"regist_selected") forState:UIControlStateNormal];
+        [buttonWoMen setBackgroundImage:IMAGENAMED(@"regist_select") forState:UIControlStateNormal];
         [self addSubview:buttonWoMen];
         
         UILabel * labelWomen = [[UILabel alloc] initWithFrame:CGRectMake(buttonWoMen.frame.size.width+buttonWoMen.frame.origin.x+2, frame.size.height - 20-10, 60, 20)];
@@ -62,6 +70,20 @@
 
 -(void)onClick:(id)sender
 {
+    UIButton * btn = (UIButton*)sender;
+    if(btn.tag ==1)
+    {
+        [buttonWoMen setBackgroundImage:IMAGENAMED(@"regist_select") forState:UIControlStateNormal];
+        [buttonMan setBackgroundImage:IMAGENAMED(@"regist_selected") forState:UIControlStateNormal];
+
+    }
+    else
+    {
+        [buttonMan setBackgroundImage:IMAGENAMED(@"regist_select") forState:UIControlStateNormal];
+        [buttonWoMen setBackgroundImage:IMAGENAMED(@"regist_selected") forState:UIControlStateNormal];
+
+
+    }
     _backBlock(sender);
 }
 

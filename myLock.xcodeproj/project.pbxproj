@@ -85,11 +85,17 @@
 		1D2BF1AC1C96A1AC000B078B /* MLNavCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BF1AB1C96A1AC000B078B /* MLNavCustom.m */; };
 		1D2BF1AF1C96B50B000B078B /* MLMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BF1AE1C96B50B000B078B /* MLMethod.m */; };
 		1D2BF1B21C96B5C7000B078B /* MLScrollview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BF1B11C96B5C7000B078B /* MLScrollview.m */; };
-		1D45ECC21CBF7ACA004C3910 /* MLUserModerl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45ECC01CBF7ACA004C3910 /* MLUserModerl.m */; };
+		1D39A5841CC5CD86000A39F7 /* MLForgetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D39A5831CC5CD86000A39F7 /* MLForgetModel.m */; };
+		1D39A5931CC611E4000A39F7 /* MLModifyPasswordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D39A5921CC611E4000A39F7 /* MLModifyPasswordModel.m */; };
+		1D45ECC21CBF7ACA004C3910 /* MLUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45ECC01CBF7ACA004C3910 /* MLUserModel.m */; };
 		1D45ECC51CBF7B6F004C3910 /* MLRegistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45ECC41CBF7B6F004C3910 /* MLRegistModel.m */; };
 		1D45ECC81CBF7C95004C3910 /* MLDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45ECC61CBF7C95004C3910 /* MLDataManager.m */; };
 		1D45ECCB1CBF7CAD004C3910 /* MLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45ECCA1CBF7CAD004C3910 /* MLDataModel.m */; };
 		1D45ECCE1CBF7D31004C3910 /* MLPhoneCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45ECCD1CBF7D31004C3910 /* MLPhoneCodeModel.m */; };
+		1D6C457E1CC4B89D00AA6801 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6C457D1CC4B89D00AA6801 /* SFHFKeychainUtils.m */; };
+		1D6C45811CC4C8BF00AA6801 /* AMTumblrHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6C45801CC4C8BF00AA6801 /* AMTumblrHud.m */; };
+		1D6C45841CC4CEBE00AA6801 /* regist_select@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D6C45821CC4CEBE00AA6801 /* regist_select@3x.png */; };
+		1D6C45851CC4CEBE00AA6801 /* regist_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D6C45831CC4CEBE00AA6801 /* regist_select@2x.png */; };
 		1D8696531CB547D200C48FEA /* MLConFirmRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8696391CB547D200C48FEA /* MLConFirmRegistViewController.m */; };
 		1D8696541CB547D200C48FEA /* MLForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D86963B1CB547D200C48FEA /* MLForgetPasswordViewController.m */; };
 		1D8696551CB547D200C48FEA /* MLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D86963D1CB547D200C48FEA /* MLLoginViewController.m */; };
@@ -341,8 +347,12 @@
 		1D2BF1AE1C96B50B000B078B /* MLMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMethod.m; sourceTree = "<group>"; };
 		1D2BF1B01C96B5C7000B078B /* MLScrollview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLScrollview.h; sourceTree = "<group>"; };
 		1D2BF1B11C96B5C7000B078B /* MLScrollview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLScrollview.m; sourceTree = "<group>"; };
-		1D45ECBF1CBF7ACA004C3910 /* MLUserModerl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserModerl.h; sourceTree = "<group>"; };
-		1D45ECC01CBF7ACA004C3910 /* MLUserModerl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUserModerl.m; sourceTree = "<group>"; };
+		1D39A5821CC5CD86000A39F7 /* MLForgetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLForgetModel.h; sourceTree = "<group>"; };
+		1D39A5831CC5CD86000A39F7 /* MLForgetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLForgetModel.m; sourceTree = "<group>"; };
+		1D39A5911CC611E4000A39F7 /* MLModifyPasswordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLModifyPasswordModel.h; sourceTree = "<group>"; };
+		1D39A5921CC611E4000A39F7 /* MLModifyPasswordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLModifyPasswordModel.m; sourceTree = "<group>"; };
+		1D45ECBF1CBF7ACA004C3910 /* MLUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUserModel.h; sourceTree = "<group>"; };
+		1D45ECC01CBF7ACA004C3910 /* MLUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUserModel.m; sourceTree = "<group>"; };
 		1D45ECC31CBF7B6F004C3910 /* MLRegistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRegistModel.h; sourceTree = "<group>"; };
 		1D45ECC41CBF7B6F004C3910 /* MLRegistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRegistModel.m; sourceTree = "<group>"; };
 		1D45ECC61CBF7C95004C3910 /* MLDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDataManager.m; sourceTree = "<group>"; };
@@ -351,6 +361,12 @@
 		1D45ECCA1CBF7CAD004C3910 /* MLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDataModel.m; sourceTree = "<group>"; };
 		1D45ECCC1CBF7D31004C3910 /* MLPhoneCodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhoneCodeModel.h; sourceTree = "<group>"; };
 		1D45ECCD1CBF7D31004C3910 /* MLPhoneCodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhoneCodeModel.m; sourceTree = "<group>"; };
+		1D6C457C1CC4B89D00AA6801 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		1D6C457D1CC4B89D00AA6801 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		1D6C457F1CC4C8BF00AA6801 /* AMTumblrHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMTumblrHud.h; sourceTree = "<group>"; };
+		1D6C45801CC4C8BF00AA6801 /* AMTumblrHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTumblrHud.m; sourceTree = "<group>"; };
+		1D6C45821CC4CEBE00AA6801 /* regist_select@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "regist_select@3x.png"; sourceTree = "<group>"; };
+		1D6C45831CC4CEBE00AA6801 /* regist_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "regist_select@2x.png"; sourceTree = "<group>"; };
 		1D8696381CB547D200C48FEA /* MLConFirmRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLConFirmRegistViewController.h; sourceTree = "<group>"; };
 		1D8696391CB547D200C48FEA /* MLConFirmRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLConFirmRegistViewController.m; sourceTree = "<group>"; };
 		1D86963A1CB547D200C48FEA /* MLForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLForgetPasswordViewController.h; sourceTree = "<group>"; };
@@ -636,6 +652,10 @@
 		1D2BEFF41C9019D5000B078B /* itool */ = {
 			isa = PBXGroup;
 			children = (
+				1D6C457F1CC4C8BF00AA6801 /* AMTumblrHud.h */,
+				1D6C45801CC4C8BF00AA6801 /* AMTumblrHud.m */,
+				1D6C457C1CC4B89D00AA6801 /* SFHFKeychainUtils.h */,
+				1D6C457D1CC4B89D00AA6801 /* SFHFKeychainUtils.m */,
 				1DAEAF2A1CB3C84E00135BE2 /* JSONKit.h */,
 				1DAEAF2B1CB3C84E00135BE2 /* JSONKit.m */,
 				1DB5AB1B1CA80AA8002B60EF /* AlertView.h */,
@@ -867,6 +887,8 @@
 			children = (
 				1D2BF1951C969EA4000B078B /* MLMineModel.h */,
 				1D2BF1961C969EA4000B078B /* MLMineModel.m */,
+				1D39A5911CC611E4000A39F7 /* MLModifyPasswordModel.h */,
+				1D39A5921CC611E4000A39F7 /* MLModifyPasswordModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -990,6 +1012,8 @@
 		1D8696401CB547D200C48FEA /* image */ = {
 			isa = PBXGroup;
 			children = (
+				1D6C45821CC4CEBE00AA6801 /* regist_select@3x.png */,
+				1D6C45831CC4CEBE00AA6801 /* regist_select@2x.png */,
 				1D8696411CB547D200C48FEA /* loginViewBG@2x.png */,
 				1D8696421CB547D200C48FEA /* loginViewBG@3x.png */,
 				1D8696431CB547D200C48FEA /* regist_photo@2x.png */,
@@ -1005,12 +1029,14 @@
 			children = (
 				1D8696481CB547D200C48FEA /* MLLoginModel.h */,
 				1D8696491CB547D200C48FEA /* MLLoginModel.m */,
-				1D45ECBF1CBF7ACA004C3910 /* MLUserModerl.h */,
-				1D45ECC01CBF7ACA004C3910 /* MLUserModerl.m */,
+				1D45ECBF1CBF7ACA004C3910 /* MLUserModel.h */,
+				1D45ECC01CBF7ACA004C3910 /* MLUserModel.m */,
 				1D45ECC31CBF7B6F004C3910 /* MLRegistModel.h */,
 				1D45ECC41CBF7B6F004C3910 /* MLRegistModel.m */,
 				1D45ECCC1CBF7D31004C3910 /* MLPhoneCodeModel.h */,
 				1D45ECCD1CBF7D31004C3910 /* MLPhoneCodeModel.m */,
+				1D39A5821CC5CD86000A39F7 /* MLForgetModel.h */,
+				1D39A5831CC5CD86000A39F7 /* MLForgetModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1336,9 +1362,11 @@
 				1D1464DC1CA6B1920010D33A /* openLockRecord@2x.png in Resources */,
 				1D1464CC1CA681B40010D33A /* delete@3x.png in Resources */,
 				1DB5AA8B1CA772BE002B60EF /* mine_head_image@2x.png in Resources */,
+				1D6C45851CC4CEBE00AA6801 /* regist_select@2x.png in Resources */,
 				1D2BEFCC1C901766000B078B /* Main.storyboard in Resources */,
 				1DB5AA9D1CA7763A002B60EF /* mine_set_icon@3x.png in Resources */,
 				1DB5AB101CA8038F002B60EF /* bg_023@2x.png in Resources */,
+				1D6C45841CC4CEBE00AA6801 /* regist_select@3x.png in Resources */,
 				1DB5AB141CA8038F002B60EF /* btn_021.disable@2x.png in Resources */,
 				1DC20F491C995E39002FFD7F /* lockClose@3x.png in Resources */,
 				1DB5AB131CA8038F002B60EF /* btn_020@2x.png in Resources */,
@@ -1408,7 +1436,9 @@
 				1D2BF17F1C969DAD000B078B /* MLLockView.m in Sources */,
 				1D8696671CB5484C00C48FEA /* MLSelectorView.m in Sources */,
 				1D2BF1731C969D4D000B078B /* MLButton.m in Sources */,
+				1D39A5931CC611E4000A39F7 /* MLModifyPasswordModel.m in Sources */,
 				1D45ECC51CBF7B6F004C3910 /* MLRegistModel.m in Sources */,
+				1D39A5841CC5CD86000A39F7 /* MLForgetModel.m in Sources */,
 				1D2BF1A61C969F17000B078B /* MLServiceViewController.m in Sources */,
 				1D2BF1341C966153000B078B /* MLTabbarViewController.m in Sources */,
 				1D2BEFC61C901766000B078B /* AppDelegate.m in Sources */,
@@ -1434,8 +1464,10 @@
 				1D2BF1AC1C96A1AC000B078B /* MLNavCustom.m in Sources */,
 				1D45ECC81CBF7C95004C3910 /* MLDataManager.m in Sources */,
 				1D2BF1B21C96B5C7000B078B /* MLScrollview.m in Sources */,
+				1D6C45811CC4C8BF00AA6801 /* AMTumblrHud.m in Sources */,
 				1D1465011CA6DC810010D33A /* MLRecodeMapView.m in Sources */,
 				1DAEAF2C1CB3C84E00135BE2 /* JSONKit.m in Sources */,
+				1D6C457E1CC4B89D00AA6801 /* SFHFKeychainUtils.m in Sources */,
 				1D1464F71CA6D6FE0010D33A /* MLRecodeListView.m in Sources */,
 				1DB5AAAC1CA7861E002B60EF /* MLSetCell.m in Sources */,
 				1D2BF1701C969D3D000B078B /* MLView.m in Sources */,
@@ -1447,7 +1479,7 @@
 				1D86966A1CB54B2000C48FEA /* MLListSelectorView.m in Sources */,
 				1DB5AB1A1CA8038F002B60EF /* TSLocation.m in Sources */,
 				1DB5AA841CA77150002B60EF /* MLMineViewCell.m in Sources */,
-				1D45ECC21CBF7ACA004C3910 /* MLUserModerl.m in Sources */,
+				1D45ECC21CBF7ACA004C3910 /* MLUserModel.m in Sources */,
 				1D8696551CB547D200C48FEA /* MLLoginViewController.m in Sources */,
 				1D8696531CB547D200C48FEA /* MLConFirmRegistViewController.m in Sources */,
 				1DB5AAC61CA79A01002B60EF /* MLModifyPasswordView.m in Sources */,

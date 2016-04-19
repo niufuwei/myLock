@@ -10,6 +10,7 @@
 
 @class AsyncSocket;
 @class MLTabbarViewController;
+@class AMTumblrHud;
 
 enum{
     SocketOfflineByServer,// 服务器掉线，默认为0
@@ -25,11 +26,15 @@ typedef void (^result)(id resultString);
 @property (nonatomic,strong) AsyncSocket *asyncSocket;
 @property (nonatomic,strong) MLTabbarViewController * tabbar;
 @property (nonatomic,copy) result backDataResult;
+@property (nonatomic,strong) AMTumblrHud * Hub;
 
 -(void)connectService;
 -(void)writeData:(NSDictionary*)data resultS:(result)resultS;
 
 -(void)hideTabbar;
 -(void)showTabbar;
+
+-(void)showHub:(UIView*)v;
+-(void)removeHub;
 @end
 

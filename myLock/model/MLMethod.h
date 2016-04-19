@@ -43,4 +43,7 @@ typedef void (^block)(NSInteger index);
 
 +(BOOL)checkTel:(NSString *)str;
 +(NSString *)stringManager:(id)obj;
+
++ (NSString *)md5HexDigest:(NSString*)input;
++(NSString *)getUUID;
 @end

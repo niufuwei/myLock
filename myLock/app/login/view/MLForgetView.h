@@ -8,9 +8,15 @@
 
 #import "MLView.h"
 
+@class MLForgetModel;
+
+typedef void (^phoneCodeBlock)(NSString*phoneCode);
+
 @protocol forgetDelegate <NSObject>
+-(void)getPhoneCode:(MLPhoneCodeModel*)model phoneCode:(phoneCodeBlock)phoneCode;
 
 -(void)dismissViewControllerAnimated;
+-(void)confirmFindPassword:(MLForgetModel*)model;
 @end
 
 @interface MLForgetView : MLView

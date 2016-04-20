@@ -42,11 +42,11 @@
         
         self.mineModel = [[MLMineModel alloc] init];
         self.mineModel.dataArray = [@[@{@"title":@"头像",@"content":@""},
-                                      @{@"title":@"昵称",@"content":@"红纸盖"},
-                                      @{@"title":@"性别",@"content":@"女"},
-                                      @{@"title":@"地区",@"content":@"浙江杭州"},
-                                      @{@"title":@"账号",@"content":@"1860013087"},
-                                      @{@"title":@"个性签名",@"content":@"自动换行自动换行自动换行自动换行自动换行自动换行自动换行自动换行自动换行自动换行自动换行"}]mutableCopy];
+                                      @{@"title":@"昵称",@"content":[MLUserModel shareInstance].nickName},
+                                      @{@"title":@"性别",@"content":[MLUserModel shareInstance].isGirl ==1?@"男":@"女"},
+                                      @{@"title":@"地区",@"content":[MLUserModel shareInstance].area},
+                                      @{@"title":@"账号",@"content":[MLUserModel shareInstance].account},
+                                      @{@"title":@"个性签名",@"content":@""}]mutableCopy];
     }
     return self;
 }

@@ -44,9 +44,15 @@
         TSLocateView *locateView = [[TSLocateView alloc] initWithTitle:@"定位城市" delegate:self];
         [locateView showInView:self.view];
     }
+    if(index ==1)
+    {
+        AlertView * alert = [[AlertView alloc] initWithPlaceHoder:@"请输入新的昵称" title:@"昵称" view:self.view width:300 tag:1 textLabel:@""];
+        alert.delegate = self;
+        [alert show];
+    }
     if(index == 5)
     {
-        AlertView * alert = [[AlertView alloc] initWithPlaceHoder:@"请输入签名信息" title:@"签名" view:self.view width:300 tag:1 textLabel:@""];
+        AlertView * alert = [[AlertView alloc] initWithPlaceHoder:@"请输入签名信息" title:@"签名" view:self.view width:300 tag:5 textLabel:@""];
         alert.delegate = self;
         [alert show];
     }
@@ -54,7 +60,7 @@
 
 -(void)confirmButtonClick:(NSInteger)tag selectStr:(NSString *)selectStr
 {
-    [self.infor updateUI:5 string:selectStr];
+    [self.infor updateUI:tag string:selectStr];
 
 }
 
